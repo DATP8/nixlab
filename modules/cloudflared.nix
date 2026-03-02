@@ -8,14 +8,11 @@
       credentialsFile = "/var/lib/cloudflared/b03730f8-4297-46ee-bf35-06794fadc431.json";
       ingress = {
         "manfred.datalogi.net" = {
-	  service = "ssh://localhost:22";
-	};
+          service = "ssh://localhost:22";
+        };
         "alvaro.datalogi.net" = {
-	  service = "http://localhost:8888";
-	};
-        "ssh.manfred.datalogi.net" = {
-	  service = "ssh://localhost:22";
-	};
+          service = "http://localhost:8888";
+        };
       };
     };
   };

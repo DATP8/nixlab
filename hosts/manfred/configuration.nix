@@ -8,7 +8,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  users.users.manfred.hashedPassword = "$y$j9T$34zgPEP/8EJQk4h/P3Hqs0$4SF2QpFXOUCkQwwxVyKNwU8lX4QBgc/AzOM4zQZA/5D";
+  users.users.manfred.hashedPassword = "$y$j9T$3IKzHZomKfmqBAmAzaj7R.$tkrNOIaCf8Qc3mrRtVuisOQtJ8kTdhV12MxveRrf198";
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

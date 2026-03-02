@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   services = {
@@ -25,4 +25,11 @@
     nvidiaSettings = true; # config menu `nvidia-settings`
   };
   services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.graphics.enable = true;
+  nixpkgs.config = {
+    # allowUnfreePredicate = pkgs._cuda.lib.allowUnfreeCudaPredicate;
+    # cudaCapabilities = [ <target-architectures> ];
+    cudaForwardCompat = true;
+    cudaSupport = true;
+  };
 }
