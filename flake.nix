@@ -4,9 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     deploy-rs.url = "github:serokell/deploy-rs";
-    sops-nix.url = "github:Mic92/sops-nix";
     flake-utils.url = "github:numtide/flake-utils";
-    apcoabot.url = "github:Bliztle/apcoabot";
   };
 
   outputs =
@@ -14,16 +12,14 @@
       self,
       nixpkgs,
       deploy-rs,
-      sops-nix,
       flake-utils,
-      apcoabot,
       ...
     }:
     let
       nodes = [
         {
           hostname = "manfred";
-          ssh_hostname = "10.0.0.8";
+          ssh_hostname = "manfred";
           system = "x86_64-linux";
           role = "server";
         }
@@ -42,8 +38,6 @@
             modules = [
               ./hosts/${node.hostname}/configuration.nix
               ./configuration.nix
-              sops-nix.nixosModules.sops
-              apcoabot.nixosModules.default
             ];
           };
         }) nodes
@@ -55,7 +49,7 @@
           name = node.hostname;
           value = {
             hostname = node.ssh_hostname;
-            sshUser = "nixos";
+            sshUser = "manfred";
             remoteBuild = true;
             fastConnection = true;
             profiles.system = {
