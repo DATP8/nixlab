@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   services = {
@@ -20,16 +20,18 @@
 
   # NVidia support. Taken straight from my desktop configuration.
   hardware.nvidia = {
-    open = false; # use closed source
+    open = false;
     modesetting.enable = true; # something something better with wayland
     nvidiaSettings = true; # config menu `nvidia-settings`
+    powerManagement.enable = true;
+    # package = config.boot.kernelPackages.nvidiaPackages.beta;
   };
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.graphics.enable = true;
-  nixpkgs.config = {
-    # allowUnfreePredicate = pkgs._cuda.lib.allowUnfreeCudaPredicate;
-    # cudaCapabilities = [ <target-architectures> ];
-    cudaForwardCompat = true;
-    cudaSupport = true;
-  };
+  # nixpkgs.config = {
+  # allowUnfreePredicate = pkgs._cuda.lib.allowUnfreeCudaPredicate;
+  # cudaCapabilities = [ <target-architectures> ];
+  # cudaForwardCompat = true;
+  # cudaSupport = true;
+  # };
 }

@@ -99,6 +99,7 @@
         jupyterlab
       ]
     ))
+    cudaPackages.cudatoolkit
   ];
 
   # Enable the OpenSSH daemon.
