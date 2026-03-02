@@ -72,6 +72,7 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM7qNRrY3q4/D2V/Ef4S7TJtcELcjpSG/bbrF/HRCM6x bliztle@omen"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDgHfK+dZURsgEUUWt9jek7c8D6+s6nDz582kFzpRUgB emilschneiderlorentzen@h307.aau1x.klient.slv.site.aau.dk"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIUFn/ed0lF/nXltFO827AACEB8H/okxl+mh9OSbDRd3 madsvind7@gmail.com"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILMYU38Uo72mPMxLqK6ypy7KZmKSrS8N9T0trZyRWMvi homie@homiepc"
     ];
   };
 
