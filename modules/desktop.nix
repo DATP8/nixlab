@@ -20,14 +20,15 @@
 
   # NVidia support. Taken straight from my desktop configuration.
   hardware.nvidia = {
-    open = false;
+    open = true;
     modesetting.enable = true; # something something better with wayland
     nvidiaSettings = true; # config menu `nvidia-settings`
     powerManagement.enable = true;
-    # package = config.boot.kernelPackages.nvidiaPackages.beta;
+    gsp.enable = true;
   };
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.graphics.enable = true;
+  hardware.nvidia-container-toolkit.enable = true;
   # nixpkgs.config = {
   # allowUnfreePredicate = pkgs._cuda.lib.allowUnfreeCudaPredicate;
   # cudaCapabilities = [ <target-architectures> ];

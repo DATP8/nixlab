@@ -85,6 +85,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     btop
+    tmux
     git
     pam_u2f # General purpose pam u2f. Enough for yubikey 2fa
     ripgrep
@@ -100,6 +101,7 @@
       ]
     ))
     cudaPackages.cudatoolkit
+    pciutils
   ];
 
   # Enable the OpenSSH daemon.
