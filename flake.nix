@@ -5,14 +5,16 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     deploy-rs.url = "github:serokell/deploy-rs";
     flake-utils.url = "github:numtide/flake-utils";
+    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
   };
 
   outputs =
-    {
+    inputs@{
       self,
       nixpkgs,
       deploy-rs,
       flake-utils,
+      nix-minecraft,
       ...
     }:
     let
@@ -38,6 +40,11 @@
             modules = [
               ./hosts/${node.hostname}/configuration.nix
               ./configuration.nix
+              ./modules/minecraft.nix
+              nix-minecraft.nixosModules.minecraft-servers
+              {
+                nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
+              }
             ];
           };
         }) nodes
