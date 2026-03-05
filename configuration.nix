@@ -98,6 +98,7 @@
     uv
     (python3.withPackages (
       python-pkgs: with python-pkgs; [
+        pip
         jupyterlab
       ]
     ))
