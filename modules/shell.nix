@@ -7,17 +7,17 @@
   environment.sessionVariables = rec {
     EDITOR = "nvim";
     # Setting this directly may introduce issues with some programs, but hopefully that is not relevant.
-    # LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
     LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [
-      pkgs.cudaPackages.cuda_cudart
-      pkgs.cudaPackages.cuda_nvrtc
-      pkgs.cudaPackages.cudnn
-      # pkgs.cudaPackages.cublas
-      pkgs.cudaPackages.cuda_cccl
-      # pkgs.cudaPackages.cuda_runtime
+      pkgs.linuxPackages.nvidia_x11
+      pkgs.ncurses5
       pkgs.stdenv.cc.cc.lib
     ];
-    CUDA_PATH = "${pkgs.cudaPackages.cudatoolkit}";
-    CUDA_HOME = "${pkgs.cudaPackages.cudatoolkit}";
+    # TODO: Does this matter? IDK, if issues arise, try changing it
+    # CUDA_PATH = "${pkgs.cudaPackages.cudatoolkit}";
+    # CUDA_HOME = "${pkgs.cudaPackages.cudatoolkit}";
+    CUDA_PATH = "${pkgs.cudatoolkit}";
+    CUDA_HOME = "${pkgs.cudatoolkit}";
+    EXTRA_LDFLAGS = "-L/lib -L${pkgs.linuxPackages.nvidia_x11}/lib";
+    EXTRA_CCFLAGS = "-I/usr/include";
   };
 }
