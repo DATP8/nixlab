@@ -3,14 +3,14 @@
   meta,
   inputs,
   ...
-}:
-{
+}: {
   imports = [
     ./modules/cloudflared.nix
     ./modules/desktop.nix
     ./modules/jupyter.nix
     ./modules/neovim.nix
     ./modules/shell.nix
+    ./modules/rathole.nix
   ];
 
   security.sudo.wheelNeedsPassword = false; # Replace this with sudo-over-ssh
