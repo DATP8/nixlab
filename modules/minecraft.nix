@@ -27,7 +27,7 @@
         icecoldgold773 = "5b15147f-4f57-4fea-98cc-3272ad3cbb75";
         OP_lama = "1c8e79b2-9e7d-4746-aef1-17725051d306";
         WappaDappa = "5c120274-840f-4c4f-8581-1aff51126f32";
-        MadsVind = "d06b9697-5c38-44cd-a075-34c4c5cbabfd";
+        __Vind__ = "ecb0a611-c0bc-402a-b00b-5026c54ef756";
       };
 
       # Specify the custom minecraft server package
