@@ -24,6 +24,7 @@
       whitelist = {
         Bliztle_ = "78cfe459-7775-441d-b0db-f05ae2a28895";
         Trixa42 = "a8de6c28-bebd-4147-836d-b1d0d849f1a8";
+        SmollRed = "a05148bb-9cc0-4731-b341-92883e15ead0";
         icecoldgold773 = "5b15147f-4f57-4fea-98cc-3272ad3cbb75";
         OP_lama = "1c8e79b2-9e7d-4746-aef1-17725051d306";
         WappaDappa = "5c120274-840f-4c4f-8581-1aff51126f32";
@@ -34,6 +35,7 @@
       # package = pkgs.fabricServers.fabric-1_21_1.override {
       #   loaderVersion = "0.16.10";
       # }; # Specific fabric loader version
+      package = pkgs.vanillaServers.vanilla;
 
       # symlinks = {
       #   mods = pkgs.linkFarmFromDrvs "mods" (
