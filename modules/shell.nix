@@ -11,6 +11,8 @@
       pkgs.linuxPackages.nvidia_x11
       pkgs.ncurses5
       pkgs.stdenv.cc.cc.lib
+      pkgs.cudaPackages.cudatoolkit
+      pkgs.cudaPackages.cudnn
     ];
     # TODO: Does this matter? IDK, if issues arise, try changing it
     # CUDA_PATH = "${pkgs.cudaPackages.cudatoolkit}";

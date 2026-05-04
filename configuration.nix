@@ -3,7 +3,8 @@
   meta,
   inputs,
   ...
-}: {
+}:
+{
   imports = [
     ./modules/cloudflared.nix
     ./modules/desktop.nix
@@ -104,6 +105,9 @@
     ))
     cudaPackages.cudatoolkit
     pciutils
+    stdenv.cc.cc.lib
+    cudaPackages.cudatoolkit
+    cudaPackages.cudnn
   ];
 
   # Enable the OpenSSH daemon.
