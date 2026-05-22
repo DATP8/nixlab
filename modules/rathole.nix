@@ -2,11 +2,13 @@
   config,
   lib,
   ...
-}: let
+}:
+let
   ratholePort = 44133;
-in {
+in
+{
   services.rathole = {
-    enable = true;
+    enable = false;
     # Should be "client" on server behind NAT, and "server" on public server
     role = "client";
     settings = {
@@ -28,10 +30,15 @@ in {
     # ```
     credentialsFile = "/var/lib/secrets/rathole/config.toml";
   };
-  networking.firewall = let
-    openPorts = lib.optionals (config.services.rathole.role == "server") [ratholePort 25565];
-  in {
-    allowedTCPPorts = openPorts;
-    allowedUDPPorts = openPorts;
-  };
+  networking.firewall =
+    let
+      openPorts = lib.optionals (config.services.rathole.role == "server") [
+        ratholePort
+        25565
+      ];
+    in
+    {
+      allowedTCPPorts = openPorts;
+      allowedUDPPorts = openPorts;
+    };
 }

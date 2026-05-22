@@ -19,7 +19,7 @@
     # CUDA_HOME = "${pkgs.cudaPackages.cudatoolkit}";
     CUDA_PATH = "${pkgs.cudatoolkit}";
     CUDA_HOME = "${pkgs.cudatoolkit}";
-    EXTRA_LDFLAGS = "-L/lib -L${pkgs.linuxPackages.nvidia_x11}/lib";
+    EXTRA_LDFLAGS = "-L/lib -L${pkgs.linuxPackages.nvidia_x11}/lib -L${pkgs.cudaPackages.cudnn}/lib";
     EXTRA_CCFLAGS = "-I/usr/include";
   };
 }

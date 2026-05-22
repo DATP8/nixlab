@@ -13,9 +13,9 @@
         "alvaro.datalogi.net" = {
           service = "http://localhost:8888";
         };
-        "minecraft.datalogi.net" = {
-          service = "tcp://localhost:25565";
-        };
+        # "minecraft.datalogi.net" = {
+        #   service = "tcp://localhost:25565";
+        # };
       };
     };
   };
